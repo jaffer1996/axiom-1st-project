@@ -28,7 +28,7 @@ body {
 }
 
 .form {
-    padding: 30px 40px;
+    padding: 10px 20px;
 }
 
 .form-control {
@@ -50,4 +50,14 @@ body {
     width: 100%;
     padding: 10px;
     font-size: 14px;
+}
+
+.form button {
+    border-radius: 5px;
+    box-shadow: none;
+    background-color: blue;
+    color: crimson;
+    font-size: 16px;
+    padding: 5px;
+    font-weight: bold;
 }
