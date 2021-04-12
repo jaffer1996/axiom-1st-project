@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+:root {
+    --success-color: green;
+    --invalid-color: orangered;
+}
+
+
 * {
     box-sizing: border-box;
 }
@@ -16,11 +22,11 @@ body {
 }
 
 .container {
-    background-color: rgb(134, 18, 18);
+    background-color: rgb(9, 174, 207);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 2px 5px black;
-    margin-top: 30px;
+    margin-top: 50px;
     height: 40%;
 }
 
@@ -34,37 +40,66 @@ body {
 
 .form-control {
     margin-bottom: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     position: relative;
 }
 
 .form-control label {
     color: black;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .form-control input {
     border-radius: 5px;
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     font-size: 14px;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border: 1.5px solid black;
+    border-radius: 5px;
+}
+
+.form-control.success input {
+    border: 2px solid var(--success-color);
+}
+
+.form-control.invalid input {
+    border: 2px solid var(--invalid-color);
+}
+
+.form-control small {
+    color: var(--invalid-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.invalid small {
+    visibility: visible;
 }
 
 .form button {
     border-radius: 5px;
-    background-color: blue;
+    background-color:  rgba(9,9,121,1);
+    border: 2px solid rgba(9,9,121,1);
     text-align: center;
+    display: block;
     color: cornsilk;
-    font-size: 14px;
-    padding: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
     font-weight: bold;
-    margin-left: 60px;
 }
 
 .form button:hover{
-    box-shadow: 3px 5px 10px black;
+    box-shadow: 5px 8px 12px black;
     cursor: pointer;
 }
