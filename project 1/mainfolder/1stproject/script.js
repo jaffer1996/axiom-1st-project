@@ -4,17 +4,34 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
-let showError = (input, message) => {
+const showError = (input, message) => {
     const formControl = input.parentElement;
     formControl.classList.add('invalid');
     const small = formControl.querySelector('small');
     small.innerHTML = message; 
 }
 
-let showSuccess = (input) => {
+const showSuccess = (input) => {
     const formControl = input.parentElement;
     formControl.classList.add('success');
 }
+
+const passwordchecker = (input, message) => {
+    const formControl = input.parentElement;
+    formControl.classList.add('invalid');
+    const small = formControl.querySelector('small');
+    small.innerHTML = message;
+    console.log(input.value)
+}
+
+password.addEventListener('change', (e) => {
+    if(e.target.value <= 5){
+        passwordchecker(password, 'Password is too weak');
+        console.log(e.target.value);
+    } else {
+        showSuccess(password);
+    }
+})
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -31,8 +48,8 @@ form.addEventListener('submit', (e) => {
         showSuccess(email);
     }
 
-    if(password.value === ''){
-        showError(password, 'Password is required');
+    if(password.value.length <= 5){
+        passwordchecker(password, 'Password is too weak');
     } else {
         showSuccess(password);
     }
