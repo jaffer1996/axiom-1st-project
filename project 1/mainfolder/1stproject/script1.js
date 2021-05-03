@@ -30,24 +30,41 @@ password.addEventListener('change', (e) => {
     }
 })
 
-const checkrequired = (inputarray) => {
-    inputarray.forEach(element => {
-        if (element.value === ''){
-            showError (element,`${nameformat(element)} is required`)
-        }
-        else {
-            showSuccess(element);
-        }
-    });
-} 
-
-const nameformat = (input) => {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-}
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    checkrequired([username,email,password,password2]);
+    if(username.value === ''){
+        showError(username, 'Username is required');
+    } else {
+        showSuccess(username);
+    }
 
+    if(email.value === ''){
+        showError(email, 'Email is required');
+    } else if(!validateEmail(email.value)) {
+        showError(email, 'Email is invalid');
+    } 
+    else {
+        showSuccess(email);
+    }
+
+    if(password.value.length <= 5){
+        passwordchecker(password, 'Password is too weak');
+    } else {
+        showSuccess(password);
+    }
+
+    if(password.value === ''){
+        showError(password, 'Please confirm Password');
+    } else if (password.value.length <= 5  ){
+        passwordchecker(password, 'Password is too weak');
+    } else {
+        showSuccess(password);
+    }
+
+    if(password2.value === ''){
+        showError(password2, 'Please confirm Password');
+    } else {
+        showSuccess(password2);
+    }
 })
