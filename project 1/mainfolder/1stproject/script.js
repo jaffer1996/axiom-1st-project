@@ -16,17 +16,14 @@ const showSuccess = (input) => {
     formControl.classList.add('success');
 }
 
-const passwordchecker = (input, message) => {
-    const formControl = input.parentElement;
-    formControl.classList.add('invalid');
-    const small = formControl.querySelector('small');
-    small.innerHTML = message;
-    console.log(input.value)
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
 password.addEventListener('change', (e) => {
-    if(e.target.value <= 5){
-        passwordchecker(password, 'Password is too weak');
+    if(e.target.value.length <= 5){
+        showError(password, 'Password is too weak');
         console.log(e.target.value);
     } else {
         showSuccess(password);
@@ -44,11 +41,22 @@ form.addEventListener('submit', (e) => {
 
     if(email.value === ''){
         showError(email, 'Email is required');
-    } else {
+    } else if(!validateEmail(email.value)) {
+        showError(email, 'Email is invalid');
+    } 
+    else {
         showSuccess(email);
     }
 
     if(password.value.length <= 5){
+        passwordchecker(password, 'Password is too weak');
+    } else {
+        showSuccess(password);
+    }
+
+    if(password.value === ''){
+        showError(password, 'Please confirm Password');
+    } else if (password.value.length <= 5  ){
         passwordchecker(password, 'Password is too weak');
     } else {
         showSuccess(password);
