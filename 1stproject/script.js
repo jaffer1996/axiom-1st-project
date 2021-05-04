@@ -6,14 +6,14 @@ const password2 = document.getElementById('password2');
 
 const showError = (input, message) => {
     const formControl = input.parentElement;
-    formControl.classList.add('invalid');
+    formControl.className = 'form-control invalid';
     const small = formControl.querySelector('small');
     small.innerHTML = message; 
 }
 
 const showSuccess = (input) => {
     const formControl = input.parentElement;
-    formControl.classList.add('success');
+    formControl.className = 'form-control success';
 }
 
 function checkEmail(input) {
