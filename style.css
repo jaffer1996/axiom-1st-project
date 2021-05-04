@@ -31,3 +31,7 @@ body {
     color: rgba(0,212,255,1);
     font-size: 20px;
 }
+
+.projects:hover {
+    transform: scale(1.1);
+}
