@@ -58,6 +58,16 @@ const nameformat = (input) => {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1)
 }
 
+form.addEventListener('change', (e) => {
+    e.preventDefault();
+    
+    checkrequired([username,email,password,password2]);
+    checklength(username,3,10);
+    checklength(password,6,30);
+    checkEmail(email);
+    checkpasswordmatch(password,password2);
+})
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
