@@ -69,3 +69,22 @@ h1{
     margin-left: 10px;
     font-weight: bold;
 }
+
+.homebutton {
+    padding: 10px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.homebutton a{
+    text-decoration: none;
+    color: honeydew;
+}
+
+.homebutton:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 1);
+    transform: scale(1.2);
+}
