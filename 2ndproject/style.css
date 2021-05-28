@@ -33,7 +33,7 @@ body {
 }
 
 .seat {
-    background-color: darkgrey;
+    background-color: rgb(126, 125, 125);
     height: 12px;
     width: 15px;
     margin: 3px;
