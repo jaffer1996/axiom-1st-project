@@ -68,6 +68,13 @@ h1{
     color: white;
     margin-left: 10px;
     font-weight: bold;
+    margin-right: 8px;
+}
+
+.timestamp2 {
+    color: white;
+    margin-left: 10px;
+    font-weight: bold;
 }
 
 .homebutton {
