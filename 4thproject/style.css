@@ -119,6 +119,7 @@ select:focus, input:focus, button:focus {
 }
 
 .backbutton {
+    margin-top: 20px;
     padding: 10px;
     border: 0;
     border-radius: 5px;
@@ -142,4 +143,5 @@ select:focus, input:focus, button:focus {
     overflow: auto;
     display: flex;
     font-weight: bold;
+    justify-content: center;
 }

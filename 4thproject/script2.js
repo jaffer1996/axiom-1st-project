@@ -8,7 +8,7 @@ const calculate = () => {
         var text = " ";
         var x;
         for (x in data.conversion_rates) {
-        text += x + " " + data.conversion_rates[x] + "<br />";
+        text += x + ": " + data.conversion_rates[x] + "<br />";
         }
         conversionrates.innerHTML = text;
         console.log(text);
