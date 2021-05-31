@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(204, 204, 204);
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+}
+
+.currency{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    color: black;
+}
+
+p{
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.btn{
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    margin: 0px 50px 10px 50px;
+}
+
+.swap-button-container{
+    display: flex;
+    flex-direction: column;
+}
+
+select{
+    padding: 5px 10px 5px 5px;
+    margin-bottom: 15px;
+    border: 1px solid gray;
+    background-color: rgb(173, 173, 173);
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.rate{
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+input{
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    background: transparent;
+    border: 0;
+}
+
+select:focus, input:focus, button:focus {
+    outline: 0;
+}
+
+.homebutton {
+    padding: 10px;
+    margin-top: 20px;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    text-align: center;
+}
+
+.homebutton a{
+    text-decoration: none;
+    color: honeydew;
+}
+
+.homebutton:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+}
+
+.nextbutton {
+    float: left;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    border: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nextbutton a{
+    text-decoration: none;
+    color: honeydew;
+}
+
+.nextbutton:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 1);
+    transform: scale(1.1);
+}
+
+.navigationbuttons{
+    display: flex;
+}
+
+.backbutton {
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.backbutton a{
+    text-decoration: none;
+    color: honeydew;
+}
+
+.backbutton:hover {
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 1);
+    transform: scale(1.2);
+}
+
+.conversionratesbox{
+    height: 300px;
+    width: 500px;
+    overflow: auto;
+    display: flex;
+    font-weight: bold;
+}
