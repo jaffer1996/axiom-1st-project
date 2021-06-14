@@ -108,6 +108,7 @@ playbtn.addEventListener('click', () => {
     
     popupcontainer.style.display = 'none';
 
+    displayword();
 })
 
 
