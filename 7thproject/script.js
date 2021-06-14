@@ -60,7 +60,7 @@ function updateincorrectletters () {
     })
 
     if (incorrectlettersarray.length === 6) {
-        finalmessage.innerText = 'Game Lost !!! click below to try again';
+        finalmessage.innerHTML = `Game Lost !!!  correct word was "${selectedword}" <br> <br> click below to try again `;
         popupcontainer.style.display = 'flex';
     }
 
