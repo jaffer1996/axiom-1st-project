@@ -1,14 +1,28 @@
 const word = document.getElementById('word');
+const definitioncontainer = document.getElementById('definition');
 const incorrectletters = document.getElementById('incorrect-letters');
 const playbtn = document.getElementById('playbutton');
 const popupcontainer = document.getElementById('popup-container');
 const finalmessage = document.getElementById('final-message');
 const notificationcontainer = document.getElementById('notification-container');
-const figureparts = document.querySelectorAll('.figure-part')
+const figureparts = document.querySelectorAll('.figure-part');
 
-const words = ["declared","universe","introduced","by","stood","never","lie","trace","spend","particles","system","late","curious","cent","sugar","danger","magic","example","garage","handle","cook","smaller","beauty","catch","log","cat","occasionally","beginning","growth","metal","mainly","shaking","found","perfectly","poetry","plenty","according","saw","air","pool","choice","breathe"];
+let selectedword;
+let definition;
 
-let selectedword = words[Math.floor(Math.random() * words.length)];
+function randomwordgetter() {
+    fetch('https://random-words-api.vercel.app/word',{
+    method : "GET",
+    })
+    .then(res => res.json())
+    .then(data => {
+        selectedword = data[0].word.toLowerCase();
+        definition = data[0].definition;
+        displayword();
+    });
+}
+
+randomwordgetter();
 
 const correctlettersarray = [];
 const incorrectlettersarray = [];
@@ -26,6 +40,8 @@ function displayword() {
             .join('')
         }
       `;
+
+      definitioncontainer.innerText = `Definition: ${definition}`; 
 
       const innerword = word.innerText.replace(/\n/g , '')
 
@@ -102,7 +118,7 @@ playbtn.addEventListener('click', () => {
     correctlettersarray.splice(0);
     incorrectlettersarray.splice(0);
 
-    let selectedword = words[Math.floor(Math.random() * words.length)];
+    randomwordgetter();
 
     updateincorrectletters();
     
@@ -112,4 +128,3 @@ playbtn.addEventListener('click', () => {
 })
 
 
-displayword();
