@@ -60,11 +60,11 @@ function displaymealdetails(mealdata) {
 
     selectedmeal.innerHTML = `
         <div class="selected-meal-details">
-            <h3>${mealdata.strMeal}</h3>
+            <h2>${mealdata.strMeal}</h2>
             <img src="${mealdata.strMealThumb}" alt="${mealdata.strMeal}"/>
             <div class="selected-meal-info">
-                ${mealdata.strCategory ? `<p>${mealdata.strCategory}</p>` : ''}
-                ${mealdata.strArea ? `<p>${mealdata.strArea}</p>` : ''}
+                ${mealdata.strCategory ? `<p>Category: ${mealdata.strCategory}</p>` : ''}
+                ${mealdata.strArea ? `<p>Origin: ${mealdata.strArea}</p>` : ''}
             </div>
             <div class="selected-meal-instructions">
                 <p>${mealdata.strInstructions}</p>
