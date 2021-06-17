@@ -149,3 +149,21 @@ nav {
         width: 700px;
     }
 }
+
+@media (max-width: 320px) {
+    nav {
+        width: 400px;
+    }
+    
+    .container {
+        width: 400px;
+    }
+
+    .projectscontainer {
+        width: 400px;
+    }
+
+    nav .logo {
+        margin-right: 20px;
+    }
+}
