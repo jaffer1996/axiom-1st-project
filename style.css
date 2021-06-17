@@ -96,8 +96,7 @@ nav {
 }
 
 .container p{
-    padding-left: 300px;
-    padding-right: 300px;
+    width: 70%;
     text-align: center;
     font-size: 20px;
 }
@@ -135,4 +134,18 @@ nav {
 
 .links:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    nav {
+        width: 700px;
+    }
+    
+    .container {
+        width: 700px;
+    }
+
+    .projectscontainer {
+        width: 700px;
+    }
 }
