@@ -70,7 +70,7 @@ form.addEventListener('change', (e) => {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     checkrequired([username,email,password,password2]);
     checklength(username,3,10);
     checklength(password,6,30);
