@@ -150,16 +150,22 @@ select:focus, input:focus, button:focus {
     .container {
         width: 400px;
         display: block;
+        align-items: center;
+        justify-content: center;
     }
 
     p {
         text-align: center;
         width: 300px;
     }
-    
+
     h1 {
         text-align: center;
         width: 300px;
+    }
+
+    select {
+        width: 400px;
     }
     
 }
