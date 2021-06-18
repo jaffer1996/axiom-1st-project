@@ -34,12 +34,14 @@ nav .logo {
     text-align: center;
     margin-left: 20px;
     margin-right: 90px;
+    background: yellow;
 }
 
 nav {
     display: flex;
     background-color: var(--primary-color);
     height: 120px;
+    width: 100%;
 }
 
 .pagelinks {
@@ -47,6 +49,7 @@ nav {
     font-size: 20px;
     font-weight: bold;
     margin-top: 80px;
+    background-color: green;
 }
 
 .pagelinks:hover{
@@ -81,13 +84,14 @@ nav {
 }
 
 .container {
-    background-color: var(--secondary-color);
+    background-color: blue;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
     margin: 0;
+    width: 100%;
 }
 
 .container h1 {
@@ -140,12 +144,12 @@ nav {
     nav {
         width: 700px;
     }
-    
-    .container {
-        width: 700px;
-    }
 
     .projectscontainer {
         width: 700px;
+    }
+
+    nav .logo {
+        margin-right: 0px;
     }
 }
