@@ -145,3 +145,21 @@ select:focus, input:focus, button:focus {
     font-weight: bold;
     justify-content: center;
 }
+
+@media (max-width: 700px) {
+    .container {
+        width: 400px;
+        display: block;
+    }
+
+    p {
+        text-align: center;
+        width: 300px;
+    }
+    
+    h1 {
+        text-align: center;
+        width: 300px;
+    }
+    
+}
