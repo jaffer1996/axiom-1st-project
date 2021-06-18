@@ -156,16 +156,16 @@ select:focus, input:focus, button:focus {
 
     p {
         text-align: center;
-        width: 300px;
+        width: 200px;
     }
 
     h1 {
         text-align: center;
-        width: 300px;
+        width: 200px;
     }
 
     select {
-        width: 400px;
+        width: 200px;
+        margin-left: 100px;
     }
-    
 }
