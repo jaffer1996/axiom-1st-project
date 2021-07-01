@@ -8,11 +8,6 @@ const amount = document.getElementById('amount');
 
 const Transactions = JSON.parse(localStorage.getItem('transactions'));
 
-// const Transactions = [
-//     {id:1 , reason:"salary", amount:5000},
-//     {id:2 , reason:"asf", amount:-2000}
-// ];
-
 let transactions = [];
 
 function displaytransaction (transaction) {
