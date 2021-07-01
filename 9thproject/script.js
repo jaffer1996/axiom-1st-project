@@ -5,10 +5,14 @@ const list = document.getElementById('list');
 const form = document.getElementById('add-form');
 const reason = document.getElementById('reason');
 const amount = document.getElementById('amount');
+const clearbtn = document.getElementById('clear');
+
+let transactions = [];
 
 const Transactions = JSON.parse(localStorage.getItem('transactions'));
 
-let transactions = Transactions;
+if (Transactions != null)
+    { transactions = Transactions; }
 
 function displaytransaction (transaction) {
 
@@ -24,6 +28,8 @@ function displaytransaction (transaction) {
     `;
 
     list.appendChild(transactionLI);
+
+    clearbtn.style.display = 'block';
 
 }
 
@@ -87,6 +93,13 @@ function updatebalance () {
 }
 
 form.addEventListener('submit', addtransaction);
+
+clearbtn.addEventListener('click', () => {
+    clearbtn.style.display = 'none';  
+    localStorage.removeItem('transactions');
+    transactions = []; 
+    init();
+})
 
 function init() {
     list.innerHTML = '';

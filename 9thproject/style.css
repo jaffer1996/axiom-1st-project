@@ -133,3 +133,14 @@ input {
     margin: 10px 0 30px;
     padding: 5px;
 }
+
+.clear {
+    background-color: rgb(70, 70, 218);
+    color: white;
+    border: 0;
+    display: none;
+    font-size: 18px;
+    width: 100%;
+    margin: 10px 0 30px;
+    padding: 5px;
+}
