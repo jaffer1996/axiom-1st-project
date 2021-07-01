@@ -6,16 +6,17 @@ const form = document.getElementById('add-form');
 const reason = document.getElementById('reason');
 const amount = document.getElementById('amount');
 
-const Transactions = [
-    {id: 1, reason: 'salary', amount: 5000},
-    {id: 2, reason: 'lunch', amount: -40},
-    {id: 3, reason: 'breakfast', amount: -50},
-    {id: 4, reason: 'dinner', amount: -20},
-];
+const Transactions = JSON.parse(localStorage.getItem('transactions'));
 
-let transactions = Transactions;
+// const Transactions = [
+//     {id:1 , reason:"salary", amount:5000},
+//     {id:2 , reason:"asf", amount:-2000}
+// ];
+
+let transactions = [];
 
 function displaytransaction (transaction) {
+
     const type = transaction.amount > 0 ? '+' : '-';
 
     const transactionLI = document.createElement('li');
@@ -32,7 +33,7 @@ function displaytransaction (transaction) {
 }
 
 function createID() {
-    return Math.floor(Math.random() * 100000); 
+    return Math.floor(Math.random() * 1000); 
 }
 
 function addtransaction (e) {
@@ -53,13 +54,21 @@ function addtransaction (e) {
 
         updatebalance();
     
+        reason.value = '';
         amount.value = '';
-    }
+
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+
+        init();
+        }
 }
 
 function deletetransaction(id) {
-    transactions = transactions.filter(transaction => transaction.id !== id);
-
+    //transactions = transactions.filter(transaction => transaction.id !== id);
+    let temparray = JSON.parse(localStorage.getItem('transactions'));
+    temparray = temparray.filter(transaction => transaction.id !== id);
+    transactions = temparray;
+    localStorage.setItem('transactions', JSON.stringify(transactions));
     init();
 }
 
@@ -90,6 +99,7 @@ function init() {
     transactions.forEach(displaytransaction);
 
     updatebalance();
+
 };
 
 init();
