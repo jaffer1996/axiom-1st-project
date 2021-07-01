@@ -8,7 +8,7 @@ const amount = document.getElementById('amount');
 
 const Transactions = JSON.parse(localStorage.getItem('transactions'));
 
-let transactions = [];
+let transactions = Transactions;
 
 function displaytransaction (transaction) {
 
