@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Otomanopee One', sans-serif;
+    background-color: #341f97;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.container {
+    background-color: #222f3e;
+    border-radius: 10px;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    margin: 100px, 0;
+    z-index: 10;
+}
+
+.album-art {
+    position: relative;
+    width: 150px;
+}
+
+.album-art img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: rotate 3s linear infinite;
+    animation-play-state: paused;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.nav-btn {
+    border: 0;
+    background: transparent;
+    color: #5f27cd;
+    margin: 0 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.nav-btn-large {
+    font-size: 24px;
+}
+
+.info {
+    background-color: #5f27cd;
+    border-radius: 10px;
+    position: absolute;
+    color: white;
+    left: 15px;
+    top: 0px;
+    width: calc(100% - 30px);
+    padding: 10px 10px 10px 150px;
+    transform: translateY(0%);
+    transition: transform 1s ease-in, opacity 1s ease-in;
+    z-index: 0;
+    opacity: 0;
+}
+
+.info h4 {
+    margin: 0;
+    text-align: center;
+}
+
+.container.play .info {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.container.play .album-art img {
+    animation-play-state: running;
+}
+
+.progress {
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 5px;
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: #576574;
+    border-radius: 10px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+h1 {
+    margin-bottom: 150px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+

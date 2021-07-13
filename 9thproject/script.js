@@ -16,7 +16,7 @@ if (Transactions != null)
 
 function displaytransaction (transaction) {
 
-    const type = transaction.amount > 0 ? '+' : '-';
+    //const type = transaction.amount > 0 ? '+' : '-';
 
     const transactionLI = document.createElement('li');
 
