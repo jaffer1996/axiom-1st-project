@@ -63,7 +63,7 @@ body {
 
 .slider {
     width: 50px;
-    background-color: #5f27cd;
+    color: black;
     display: none;
     margin-left: 5px;
 }
@@ -78,7 +78,7 @@ body {
     color: #5f27cd;
 }
 
-.fa.fa-volume-off{
+.fas.fa-volume-mute{
     font-size: 24px;
     color: #5f27cd;
 }

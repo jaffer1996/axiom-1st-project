@@ -11,7 +11,7 @@ const volumeicon = document.getElementById('volume-icon');
 const slider = document.getElementById('slider');
 
 const songs = ['Nescafe Basement - Aadat Instrumental', 'Strings - Mera Bichra Yaar', 'Vital Signs - Aitebaar'];
-let songindex = 0;
+let songindex = 1;
 
 loadsong(songs[songindex]);
 
@@ -98,17 +98,19 @@ slider.addEventListener("mouseleave", () => {
 slider.addEventListener('change', () => {
     audio.volume = slider.value;
 
-    if (slider.value < 0.5 ) {
+    if (slider.value < 0.5 && slider.value > 0.2 ) {
         volumeicon.removeAttribute("class");
         volumeicon.classList.add('fa');
         volumeicon.classList.add('fa-volume-down');
-    }else if (slider.value < 0.3) {
+    }else if (slider.value < 0.1) {
         volumeicon.removeAttribute("class");
-        volumeicon.classList.add('fa');
-        volumeicon.classList.add('fa-volume-off');
+        volumeicon.classList.add('fas');
+        volumeicon.classList.add('fa-volume-mute');
     }else if (slider.value > 0.7) {
         volumeicon.removeAttribute("class");
         volumeicon.classList.add('fa');
         volumeicon.classList.add('fa-volume-up');
     }
+
+    console.log(slider.value);
 })
