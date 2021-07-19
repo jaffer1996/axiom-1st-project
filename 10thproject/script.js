@@ -98,7 +98,7 @@ slider.addEventListener("mouseleave", () => {
 slider.addEventListener('change', () => {
     audio.volume = slider.value;
 
-    if (slider.value < 0.5 && slider.value > 0.2 ) {
+    if (slider.value < 0.6 && slider.value > 0.1 ) {
         volumeicon.removeAttribute("class");
         volumeicon.classList.add('fa');
         volumeicon.classList.add('fa-volume-down');
@@ -106,7 +106,7 @@ slider.addEventListener('change', () => {
         volumeicon.removeAttribute("class");
         volumeicon.classList.add('fas');
         volumeicon.classList.add('fa-volume-mute');
-    }else if (slider.value > 0.7) {
+    }else if (slider.value > 0.6) {
         volumeicon.removeAttribute("class");
         volumeicon.classList.add('fa');
         volumeicon.classList.add('fa-volume-up');
