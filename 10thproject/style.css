@@ -61,6 +61,28 @@ body {
     font-size: 24px;
 }
 
+.slider {
+    width: 50px;
+    background-color: #5f27cd;
+    display: none;
+    margin-left: 5px;
+}
+
+.fa.fa-volume-up{
+    font-size: 24px;
+    color: #5f27cd;
+}
+
+.fa.fa-volume-down{
+    font-size: 24px;
+    color: #5f27cd;
+}
+
+.fa.fa-volume-off{
+    font-size: 24px;
+    color: #5f27cd;
+}
+
 .info {
     background-color: #5f27cd;
     border-radius: 10px;

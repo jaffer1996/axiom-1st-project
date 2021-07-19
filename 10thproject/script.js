@@ -7,6 +7,8 @@ const previousbtn = document.getElementById('previous');
 const playbtn = document.getElementById('play');
 const nextbtn = document.getElementById('next');
 const audio = document.getElementById('audio');
+const volumeicon = document.getElementById('volume-icon');
+const slider = document.getElementById('slider');
 
 const songs = ['Nescafe Basement - Aadat Instrumental', 'Strings - Mera Bichra Yaar', 'Vital Signs - Aitebaar'];
 let songindex = 0;
@@ -84,3 +86,29 @@ progress.addEventListener('click', (e) => {
 })
 
 audio.addEventListener('ended', nextsong);
+
+volumeicon.addEventListener('mouseover', () => {
+    slider.style.display = 'block';
+})
+
+slider.addEventListener("mouseleave", () => {
+    slider.style.display = 'none';
+})
+
+slider.addEventListener('change', () => {
+    audio.volume = slider.value;
+
+    if (slider.value < 0.5 ) {
+        volumeicon.removeAttribute("class");
+        volumeicon.classList.add('fa');
+        volumeicon.classList.add('fa-volume-down');
+    }else if (slider.value < 0.3) {
+        volumeicon.removeAttribute("class");
+        volumeicon.classList.add('fa');
+        volumeicon.classList.add('fa-volume-off');
+    }else if (slider.value > 0.7) {
+        volumeicon.removeAttribute("class");
+        volumeicon.classList.add('fa');
+        volumeicon.classList.add('fa-volume-up');
+    }
+})
