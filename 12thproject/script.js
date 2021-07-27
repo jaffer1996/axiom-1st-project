@@ -14,7 +14,7 @@ const instructions = document.getElementById('instructions');
 
 let randomword;
 let score = 0;
-let time = 60;
+let time = 10;
 
 let difficulty = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'easy';
 
