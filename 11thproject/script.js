@@ -2,9 +2,20 @@ const filter = document.getElementById('filter');
 const timelinecontainer = document.getElementById('timeline-container');
 const loader = document.getElementById('loader');
 
-let limit = 10;
+let limit = 5;
 let page = 1;
 
+
+// using newsapi.org to fetch data
+// async function getData () {
+//     const res = await fetch(`https://newsapi.org/v2/everything?domains=techcrunch.com,thenextweb.com&apiKey=0015a108872c413f9d74d655fea0c1cb&_limit=${limit}&_page=${page}`);
+//     const data = await res.json();
+
+//     return data.articles;
+// }
+
+
+// using jsonplaceholder to fetch data
 async function getData () {
     const res = await fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`);
     const data = await res.json();
@@ -14,7 +25,7 @@ async function getData () {
 
 async function updateDOM () {
     const posts = await getData();
-    
+
     posts.forEach( post => {
         const postDiv = document.createElement('div');
         postDiv.classList.add('post');
@@ -55,7 +66,6 @@ updateDOM();
 
 window.addEventListener('scroll', () => {
     const {scrollTop, scrollHeight, clientHeight} = document.documentElement;
-    console.log(scrollTop, scrollHeight, clientHeight);
 
     if ( scrollTop + clientHeight == scrollHeight) {
         loader.classList.add('show');
