@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Typing Game</title>
+</head>
+<body>
+    <button id="settings-btn" class="settings-btn">
+        <i class="fa fa-cog fa-2x"></i>
+    </button>
+
+    <button id="instructions-btn" class="instructions-btn">
+        <i class="fa fa-info fa-2x"></i>
+    </button>
+
+    <div class="settings" id="settings">
+        <form id="form">
+            <label for="difficulty">difficulty</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Fast Typing Game</h2>
+
+        <p>Type the word below as fast you Can</p>
+
+        <p>Timer will start once you start Typing</p>
+
+        <p> Mode : <span id="mode"></span></p>
+
+        <h1 id="word"></h1>
+
+        <input type="text" id="user-word" class="user-word" placeholder="Type Here" autocomplete="off"/>
+
+        <p class="timer">
+            Time Remaining: <span id="time"> </span>
+        </p>
+
+        <p class="scorecard">
+            Score : <span id="score"> 0 </span>
+        </p>
+    </div>
+
+    <div id="gameover" class="gameover">
+        <div class="finalmessage">
+            <h1>Time Up !!!</h1>
+            <p>your final score is: <span id="finalscore"></span></p>
+            <button class="restart" id="restart">Restart Game</button>
+        </div>
+    </div>
+
+    <div id="instructions" class="instructions-container">
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <p>You start the game with 10 seconds on the clock</p>
+            <p>there are three modes to play in the Game in: </p>
+            <p>In Hard mode only 1 second is added for each correct word</p>
+            <p>In Medium mode only 2 second is added for each correct word</p>
+            <p>In Easy mode only 3 second is added for each correct word</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
