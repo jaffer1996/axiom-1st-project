@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Web Speech App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Speech App</h1>
+        <button class="btn toggle-btn" id="toggle">Custom Text to Speech</button>
+
+        <div class="custom-text" id="custom-text">
+            <button class="close-btn" id="close-btn">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Change voice</h3>
+            <select id="voices"></select>
+            <textarea id="text" placeholder="Please enter your custom text that u want to be read"></textarea>
+            <button class="btn" id="read">Read custom Text</button>
+        </div>
+
+    </div>
+
+    <main id="main"></main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
